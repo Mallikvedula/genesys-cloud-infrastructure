@@ -1,5 +1,5 @@
 resource "genesyscloud_routing_queue" "support" {
-  name        = "${var.environment}-Support-Queue"
+  name        = "Support-Queue"
   description = "Customer Support Queue for ${var.environment}"
 
   # Adding users to the queue without hardcoding their IDs!
