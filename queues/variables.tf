@@ -14,5 +14,5 @@ variable "skill_ids" {
 }
 
 variable "division_id" {
-  type = string
+  type = map(string)
 }
