@@ -13,6 +13,6 @@ variable "skill_ids" {
   description = "A map of skill handles to their actual Genesys Cloud Skill IDs, passed from the skills module"
 }
 
-variable "division_id" {
+variable "division_ids" {
   type = map(string)
 }
