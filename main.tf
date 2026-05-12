@@ -16,7 +16,7 @@ module "queues" {
   environment = var.environment
   user_ids    = module.users.user_ids
   skill_ids   = module.skills.skill_ids
-  division_id = module.divisions.division_ids["hr_division"] # Example of passing division ID to queues
+  division_ids = module.divisions.division_ids # Example of passing division ID to queues
 }
 
 # 4. Create Divisions
