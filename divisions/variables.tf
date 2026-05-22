@@ -1,0 +1,1 @@
+#this file is of no use, just to show how to pass division IDs from divisions module to queues module. The actual variable definition is in queues/variables.tf and the usage is in queues/billing.tf. The main.tf file shows how to pass the division IDs from the divisions module to the queues module.
