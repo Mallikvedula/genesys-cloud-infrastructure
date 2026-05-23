@@ -3,5 +3,6 @@ output "division_ids" {
 
   value = {
     hr_division = genesyscloud_auth_division.hr_division.id
+    sales_division = genesyscloud_auth_division.sales_division.id
   }
 }
