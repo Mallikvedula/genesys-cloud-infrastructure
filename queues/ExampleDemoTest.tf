@@ -8,7 +8,7 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   division_id = var.division_ids["hr_division"]
 
   #############################################
-  # MEMBERS (Ring assignment)
+  # MEMBERS
   #############################################
   members {
     user_id  = var.user_ids["Harry_Porter"]
@@ -16,18 +16,18 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   }
 
   #############################################
-  # AFTER CALL WORK ✅
+  #  AFTER CALL WORK (FIXED)
   #############################################
-  acw_wrapup_prompt = "MANDATORY"
+  acw_wrapup_prompt = "MANDATORY_TIMEOUT"
   acw_timeout_ms    = 120000
 
   #############################################
-  # AUTO ANSWER ✅
+  #  AUTO ANSWER (FIXED)
   #############################################
   auto_answer_only = true
 
-  #############################################
-  # WRAP-UP CODES ✅
+  ############################################
+  # WRAP-UP CODES
   #############################################
   wrapup_codes = [
     var.wrapup_code_ids["billing_success"],
