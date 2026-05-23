@@ -16,3 +16,8 @@ variable "skill_ids" {
 variable "division_ids" {
   type = map(string)
 }
+
+variable "wrapup_code_ids" {
+  description = "Map of wrap-up code IDs from wrapupcodes module"
+  type        = map(string)
+}
