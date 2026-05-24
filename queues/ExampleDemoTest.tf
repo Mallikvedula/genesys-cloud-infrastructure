@@ -37,18 +37,11 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   #############################################
   # ✅ BULLSEYE ROUTING
   #############################################
-
-  # Ring 1: Strict matching (no skill removal)
-  bullseye_rings {
-    expansion_timeout_seconds = 30
-    skills_to_remove          = []
-  }
-
   # Ring 2: Relax skills (remove 1 skill)
   bullseye_rings {
     expansion_timeout_seconds = 30
     skills_to_remove          = [
-      var.skill_ids[genesyscloud_routing_skill.billing.id]   # Example skill
+      var.skill_ids["tech_support"]   # Example skill
     ]
   }
 
@@ -56,8 +49,8 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   bullseye_rings {
     expansion_timeout_seconds = 30
     skills_to_remove          = [
-      var.skill_ids[genesyscloud_routing_skill.billing.id],
-      var.skill_ids[genesyscloud_routing_skill.tech_support.id]
+      var.skill_ids["tech_support"],
+      var.skill_ids["billing"]
     ]
   }
 }
