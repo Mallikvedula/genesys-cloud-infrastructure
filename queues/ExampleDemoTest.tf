@@ -49,7 +49,6 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   bullseye_rings {
     expansion_timeout_seconds = 30
     skills_to_remove          = [
-      var.skill_ids["tech_support"],
       var.skill_ids["billing"]
     ]
   }
