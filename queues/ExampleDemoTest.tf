@@ -36,21 +36,18 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
 
   #############################################
   # ✅ BULLSEYE ROUTING
-  #############################################
+  #Ring 1: no relaxation of skills
+  bullseye_rings {
+    expansion_timeout_seconds = 30
+    skills_to_remove          = [
+      var.skill_ids["billing"]   # Example skill
+    ]
+  }
   # Ring 2: Relax skills (remove 1 skill)
   bullseye_rings {
     expansion_timeout_seconds = 30
     skills_to_remove          = [
       var.skill_ids["tech_support"]   # Example skill
-    ]
-  }
-
-  # Ring 3: Fully relaxed (remove multiple skills)
-  bullseye_rings {
-    expansion_timeout_seconds = 30
-    skills_to_remove          = [
-      var.skill_ids["product_support"],  # Example skill
-      var.skill_ids["billing"]           # Example skill
     ]
   }
 }
