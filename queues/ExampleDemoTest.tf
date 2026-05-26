@@ -40,7 +40,7 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   
 # Ring 1 → STRICT (mandatory)
 bullseye_rings {
-  expansion_timeout_seconds = 30
+  expansion_timeout_seconds = 31
   skills_to_remove = []
 }
 
