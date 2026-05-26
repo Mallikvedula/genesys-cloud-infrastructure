@@ -6,5 +6,5 @@ resource "genesyscloud_auth_division" "sales_division" {
 
 #using existing divisin below for testing purpose, will remove later
  data "genesyscloud_auth_division" "home_ind" {
-  name = "Home, ind"
+  name = "Home, ind,"
  }
