@@ -40,10 +40,11 @@ bullseye_rings {
 }
 
 # Ring 3 → remove billing + tech_support (cumulative)
+
 bullseye_rings {
-  expansion_timeout_seconds = 30
+  expansion_timeout_seconds = 35   # change from 30
   skills_to_remove = [
-    var.skill_ids["support"]
+    var.skill_ids["tech_support"]
   ]
 }
 }
