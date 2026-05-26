@@ -56,7 +56,6 @@ bullseye_rings {
 bullseye_rings {
   expansion_timeout_seconds = 30
   skills_to_remove = [
-    var.skill_ids["billing"],
     var.skill_ids["tech_support"]
   ]
 }
