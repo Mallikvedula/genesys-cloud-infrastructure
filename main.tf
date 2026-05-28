@@ -31,13 +31,15 @@ module "queues" {
 }
 
 # 6. Deploy Architect Flows
-module "architect_flows" {
-  source      = "./architect_flows"
-  environment = var.environment
+# Flows are created using the genesyscloud_flow resource.
+# The flow definition is loaded from the exported Architect YAML file path.
+# IMPORTANT: genesyscloud_flow expects filepath argument pointing to the flow definition file.
 
-  # Pass resource IDs into the flow module so the YAML flow definition can map them.
-  user_ids     = module.users.user_ids
-  skill_ids    = module.skills.skill_ids
-  queue_ids    = module.queues.queue_ids
-  division_ids = module.divisions.division_ids
+# Basic CICD Inbound Call Flow
+# This flow handles inbound calls with greeting and menu routing.
+# The YAML file is exported from Genesys Architect and deployed as-is.
+resource "genesyscloud_flow" "basic_cicd_flow" {
+  # The filepath argument is required and points to the YAML flow definition file.
+  # Terraform reads this file and deploys it to Genesys Cloud.
+  filepath = "${path.module}/architect_flows/Basic_CICD_Flow_v1-0.yaml"
 }
