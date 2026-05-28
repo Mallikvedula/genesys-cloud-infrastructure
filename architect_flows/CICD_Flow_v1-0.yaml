@@ -1,5 +1,5 @@
 inboundCall:
-  name: Basic_CICD_Flow
+  name: CICD_Flow
   description: "This is flow is for CICD POC "
   division: Home, ind,
   startUpRef: "/inboundCall/tasks/task[Greeting_12]"
@@ -121,6 +121,6 @@ inboundCall:
           - playAudio:
               name: Play Audio
               audio:
-                tts: Hello , Welcome to Capgemini Services.
+                tts: Hello , Welcome to Capgemini Services.Have a nice day
           - disconnect:
               name: Disconnect

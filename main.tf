@@ -38,8 +38,8 @@ module "queues" {
 # Basic CICD Inbound Call Flow
 # This flow handles inbound calls with greeting and menu routing.
 # The YAML file is exported from Genesys Architect and deployed as-is.
-resource "genesyscloud_flow" "basic_cicd_flow" {
+resource "genesyscloud_flow" "cicd_flow" {
   # The filepath argument is required and points to the YAML flow definition file.
   # Terraform reads this file and deploys it to Genesys Cloud.
-  filepath = "${path.module}/architect_flows/Basic_CICD_Flow_v1-0.yaml"
+  filepath = "${path.module}/architect_flows/CICD_Flow_v1-0.yaml"
 }
