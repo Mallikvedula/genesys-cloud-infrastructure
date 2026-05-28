@@ -21,3 +21,9 @@ variable "wrapup_code_ids" {
   description = "Map of wrap-up code IDs from wrapupcodes module"
   type        = map(string)
 }
+
+variable "flow_ids" {
+  type        = map(string)
+  description = "Map of Architect flow names to Genesys Cloud Flow IDs. Use this when queue routing or queue-level flow associations are required."
+  default     = {}
+}
