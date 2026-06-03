@@ -1,10 +1,10 @@
 terraform {
-  cloud {
-    organization = "YOUR_TERRAFORM_CLOUD_ORG_NAME"
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "cg_genesys"
 
     workspaces {
-      # This allows execution via CLI using prefix, but typically you link this via VCS in TFC UI.
-      tags = ["genesys-cloud"]
+      name = "genesys-dev"
     }
   }
 }
