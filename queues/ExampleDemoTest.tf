@@ -16,7 +16,7 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
  
   auto_answer_only = true
 
-  queue_flow_id = module.architect_flows.inqueue_flow_ids["support_inqueue_flow"]
+  queue_flow_id = module.architect_flows.inqueue_flow_ids["support"]
 
   
   wrapup_codes = [
