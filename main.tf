@@ -22,24 +22,25 @@ module "wrapupcodes" {
 
 # 5. Create Queues (Pass user/skill/division IDs from other modules)
 module "queues" {
-  source           = "./queues"
-  environment      = var.environment
-  user_ids         = module.users.user_ids
-  skill_ids        = module.skills.skill_ids
-  division_ids     = module.divisions.division_ids
+  source          = "./queues"
+  environment     = var.environment
+  user_ids        = module.users.user_ids
+  skill_ids       = module.skills.skill_ids
+  division_ids    = module.divisions.division_ids
   wrapup_code_ids = module.wrapupcodes.wrapup_code_ids
 }
 
 # 6. Deploy Architect Flows
-# Flows are created using the genesyscloud_flow resource.
-# The flow definition is loaded from the exported Architect YAML file path.
-# IMPORTANT: genesyscloud_flow expects filepath argument pointing to the flow definition file.
-
-# Basic CICD Inbound Call Flow
-# This flow handles inbound calls with greeting and menu routing.
-# The YAML file is exported from Genesys Architect and deployed as-is.
+# Inbound Call Flows - Execute when calls first arrive at the system
 resource "genesyscloud_flow" "basic_cicd_flow" {
-  # The filepath argument is required and points to the YAML flow definition file.
-  # Terraform reads this file and deploys it to Genesys Cloud.
-  filepath = "${path.module}/architect_flows/Basic_CICD_Flow_v1-0.yaml"
+  # Deploys the CICD inbound call flow (greeting, IVR, routing)
+  filepath = "${path.module}/architect_flows/inbound_flows/Basic_CICD_Flow.yaml"
+}
+
+# In-Queue Call Flows - Execute while customers wait in queues
+resource "genesyscloud_flow" "support_inqueue_flow" {
+  # Deploys the support queue in-queue call flow (hold messages, callbacks)
+  # After deployment, manually map this flow to a queue in Genesys Cloud UI
+  # See architect_flows/INQUEUE_DEPLOYMENT_GUIDE.md for mapping instructions
+  filepath = "${path.module}/architect_flows/inqueue_flows/Inqueue_CICD_v1-0.yaml"
 }
