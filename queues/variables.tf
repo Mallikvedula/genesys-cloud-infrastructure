@@ -21,3 +21,7 @@ variable "wrapup_code_ids" {
   description = "Map of wrap-up code IDs from wrapupcodes module"
   type        = map(string)
 }
+
+variable "inqueue_flow_ids" {
+  type = map(string)
+}

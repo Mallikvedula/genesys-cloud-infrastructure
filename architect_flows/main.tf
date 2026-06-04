@@ -1,0 +1,11 @@
+
+resource "genesyscloud_flow" "basic_cicd_flow" {
+
+  filepath = "${path.module}/inbound_flows/Basic_CICD_Flow.yaml"
+}
+
+
+resource "genesyscloud_flow" "support_inqueue_flow" {
+  
+  filepath = "${path.module}/inqueue_flows/Inqueue_CICD_v1-0.yaml"
+}
