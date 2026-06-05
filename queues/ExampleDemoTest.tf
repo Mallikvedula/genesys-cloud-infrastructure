@@ -19,7 +19,7 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
   queue_flow_id = var.inqueue_flow_ids["support"]
 
   default_script_ids = {
-    Voice = var.script_ids["AvailableAgentOnQueue"]
+    CALL = var.script_ids["AvailableAgentOnQueue"]
   }
   
 
