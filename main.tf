@@ -29,9 +29,15 @@ module "queues" {
   division_ids    = module.divisions.division_ids
   wrapup_code_ids = module.wrapupcodes.wrapup_code_ids
   inqueue_flow_ids = module.architect_flows.inqueue_flow_ids
+  script_ids = module.scripts.script_ids
+
 
 }
 
 module "architect_flows" {
   source = "./architect_flows"
+}
+
+module "scripts" {
+  source = "./scripts"
 }
