@@ -25,3 +25,7 @@ variable "wrapup_code_ids" {
 variable "inqueue_flow_ids" {
   type = map(string)
 }
+
+variable "script_ids" {
+  type = map(string)
+}
