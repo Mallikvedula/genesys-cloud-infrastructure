@@ -9,3 +9,8 @@ resource "genesyscloud_flow" "support_inqueue_flow" {
   
   filepath = "${path.module}/inqueue_flows/Inqueue_CICD_v1-0.yaml"
 }
+
+resource "genesyscloud_flow" "TestInQueueFlow" {
+  
+  filepath = "${path.module}/inqueue_flows/TestInQueue_v1-0.yaml"
+}

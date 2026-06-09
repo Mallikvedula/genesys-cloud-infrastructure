@@ -5,5 +5,6 @@ output "skill_ids" {
     billing      = genesyscloud_routing_skill.billing.id
     product_support = genesyscloud_routing_skill.product_support.id
     support     = genesyscloud_routing_skill.support.id
+    system_support = genesyscloud_routing_skill.system_support.id
   }
 }

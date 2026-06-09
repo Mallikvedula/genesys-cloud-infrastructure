@@ -4,5 +4,6 @@ output "user_ids" {
     john_doe   = genesyscloud_user.john_doe.id
     jane_smith = genesyscloud_user.jane_smith.id
     Harry_Porter = genesyscloud_user.Harry_Porter.id
+    vaibhav_sharma = genesyscloud_user.vaibhav_sharma.id
   }
 }

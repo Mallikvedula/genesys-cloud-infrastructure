@@ -3,5 +3,6 @@ output "script_ids" {
 
   value = {
     AvailableAgentOnQueue = data.genesyscloud_script.AvailableAgentOnQueue.id
+    Genesys_quick_dial = data.genesyscloud_script.Genesys_quick_dial.id
   }
 }
