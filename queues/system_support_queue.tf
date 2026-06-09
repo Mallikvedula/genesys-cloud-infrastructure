@@ -19,11 +19,6 @@ resource "genesyscloud_routing_queue" "system_support_queue" {
     service_level_percentage  = 0.7
     service_level_duration_ms = 10000
   }
-  routing_rules {
-    operator     = "MEETS_THRESHOLD"
-    threshold    = 9
-    wait_seconds = 300
-  }
 
   default_script_ids = {
     CALL = var.script_ids["Genesys_quick_dial"] # Updated to use the new script ID  
