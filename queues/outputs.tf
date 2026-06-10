@@ -5,5 +5,6 @@ output "queue_ids" {
     sales          = genesyscloud_routing_queue.sales.id
     support        = genesyscloud_routing_queue.support.id
     CICD_Test_Queue = genesyscloud_routing_queue.CICD_Test_Queue.id
+    TransactionSupport_Queue = genesyscloud_routing_queue.TransactionSupport_Queue.id
   }
 }
