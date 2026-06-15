@@ -1,4 +1,4 @@
-resource "genesyscloud_routing_queue" "sales" {
+resource "genesyscloud_routing_queue" "sales_queue" {
   name        = "Sales-Queue"
   description = "Sales Queue for sales-related inquiries"
 
