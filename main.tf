@@ -8,7 +8,7 @@ module "skills" {
 module "users" {
   source      = "./users"
   environment = var.environment
-  skill_ids       = module.skills.skill_ids
+  skill_ids   = module.skills.skill_ids
 }
 
 # 3. Create Divisions

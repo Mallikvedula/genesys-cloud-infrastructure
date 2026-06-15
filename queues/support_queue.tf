@@ -1,4 +1,4 @@
-resource "genesyscloud_routing_queue" "support" {
+resource "genesyscloud_routing_queue" "support_queue" {
   name        = "Support-Queue"
   description = "Customer Support Queue for ${var.environment} environment"
 

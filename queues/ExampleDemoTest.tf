@@ -16,7 +16,7 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
  
   auto_answer_only = true
 
-  queue_flow_id = var.inqueue_flow_ids["support"]
+  queue_flow_id = var.inqueue_flow_ids["TestInQueueFlow"]
 
   default_script_ids = {
     CALL = var.script_ids["AvailableAgentOnQueue"]

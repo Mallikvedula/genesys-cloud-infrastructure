@@ -8,7 +8,7 @@ resource "genesyscloud_routing_queue" "CICD_support_queue" {
   acw_wrapup_prompt        = "MANDATORY_TIMEOUT"
   acw_timeout_ms           = 300000
   skill_evaluation_method  = "BEST"
-  queue_flow_id            = var.inqueue_flow_ids["support"]
+  queue_flow_id            = var.inqueue_flow_ids["Inqueue_CICD"]
   auto_answer_only         = true
   enable_transcription     = true
   enable_audio_monitoring  = true

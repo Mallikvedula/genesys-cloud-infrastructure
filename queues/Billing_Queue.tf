@@ -1,4 +1,4 @@
-resource "genesyscloud_routing_queue" "billing" {
+resource "genesyscloud_routing_queue" "Billing_Queue" {
   name        = "Billing-Queue"
   description = "Billing Queue for billing inquiries"
 
