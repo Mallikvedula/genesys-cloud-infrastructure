@@ -5,7 +5,7 @@ resource "genesyscloud_flow" "basic_cicd_flow" {
 
 resource "genesyscloud_flow" "Inqueue_CICD" {
   
-  filepath = "${path.module}/inqueue_flows/Inqueue_CICD.yaml"
+  filepath = "${path.module}/inqueue_flows/Inqueue_CICD_v1-0.yaml"
 }
 
 resource "genesyscloud_flow" "TestInQueueFlow" {

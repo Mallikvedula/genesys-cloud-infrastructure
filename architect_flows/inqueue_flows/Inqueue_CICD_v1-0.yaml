@@ -22,14 +22,14 @@ inqueueCall:
     detectSilence:
       timeout:
         lit:
-          seconds: 30
+          seconds: 40
     callData:
       processingPrompt:
         noValue: true
     collectInput:
       noEntryTimeout:
         lit:
-          seconds: 10
+          seconds: 5
     dialByExtension:
       interDigitTimeout:
         lit:
@@ -59,15 +59,13 @@ inqueueCall:
       - mediaType: audio
       - mediaType: tts
   startUpTaskActions:
-    - playAudio:
-        name: Play Audio
-        audio:
-          tts: Thanks for contacting. Please stay on the line while we connect you to our agent
     - holdMusic:
         name: Hold Music
         prompt:
-          exp: Flow.HoldPrompt
+          exp: PromptSystem.on_hold_music
         bargeInEnabled:
           lit: false
         playStyle:
           entirePrompt: true
+    - disconnect:
+        name: Disconnect
