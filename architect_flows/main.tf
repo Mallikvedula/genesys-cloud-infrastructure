@@ -2,8 +2,8 @@ module "inqueue_flows" {
   source = "./inqueue_flows"
 }
 
-module "architect_flows" {
-  source = "./architect_flows"
+module "inbound_flows" {
+  source = "./inbound_flows"
 }
 
 output "inqueue_flow_ids" {
