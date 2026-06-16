@@ -1,6 +1,6 @@
 inqueueCall:
-  name: Inqueue_CICD
-  description: This flow is used by CICD setup
+  name: Inqueue_Flow
+  description: ""
   division: Home, ind,
   defaultLanguage: en-us
   supportedLanguages:
@@ -22,14 +22,15 @@ inqueueCall:
     detectSilence:
       timeout:
         lit:
-          seconds: 30
+          seconds: 40
     callData:
       processingPrompt:
-        noValue: true
+        lit:
+          name: PromptSystem.processing
     collectInput:
       noEntryTimeout:
         lit:
-          seconds: 10
+          seconds: 5
     dialByExtension:
       interDigitTimeout:
         lit:
@@ -59,10 +60,6 @@ inqueueCall:
       - mediaType: audio
       - mediaType: tts
   startUpTaskActions:
-    - playAudio:
-        name: Play Audio
-        audio:
-          tts: Thanks for contacting. Please stay on the line while we connect you to our agent
     - holdMusic:
         name: Hold Music
         prompt:
@@ -71,3 +68,5 @@ inqueueCall:
           lit: false
         playStyle:
           entirePrompt: true
+    - disconnect:
+        name: Disconnect
