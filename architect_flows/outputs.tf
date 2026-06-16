@@ -1,6 +1,6 @@
 output "inqueue_flow_ids" {
   value = {
-    Inqueue_CICD = genesyscloud_flow.Inqueue_CICD.id
     TestInQueueFlow = genesyscloud_flow.TestInQueueFlow.id
+    Inqueue_CICD_v1-0 = genesyscloud_flow.Inqueue_CICD_v1-0.id
   }
 }
