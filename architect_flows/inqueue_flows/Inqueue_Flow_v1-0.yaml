@@ -1,6 +1,6 @@
 inqueueCall:
-  name: Inqueue_CICD
-  description: This flow is used by CICD setup
+  name: Inqueue_Flow
+  description: ""
   division: Home, ind,
   defaultLanguage: en-us
   supportedLanguages:
@@ -25,7 +25,8 @@ inqueueCall:
           seconds: 40
     callData:
       processingPrompt:
-        noValue: true
+        lit:
+          name: PromptSystem.processing
     collectInput:
       noEntryTimeout:
         lit:
@@ -62,7 +63,7 @@ inqueueCall:
     - holdMusic:
         name: Hold Music
         prompt:
-          exp: PromptSystem.on_hold_music
+          exp: Flow.HoldPrompt
         bargeInEnabled:
           lit: false
         playStyle:
