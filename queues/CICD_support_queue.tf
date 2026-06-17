@@ -5,6 +5,7 @@ resource "genesyscloud_routing_queue" "CICD_support_queue" {
   members {
     user_id = var.user_ids["virat_kohli"]
   }
+  queue_flow_id = var.inqueue_flow_ids["TestInQueueFlow"]
   acw_wrapup_prompt        = "MANDATORY_TIMEOUT"
   acw_timeout_ms           = 300000
   skill_evaluation_method  = "BEST"

@@ -9,6 +9,8 @@ resource "genesyscloud_routing_queue" "ExampleDemoTest" {
     user_id  = var.user_ids["Harry_Porter"]
     ring_num = 1
   }
+  queue_flow_id = var.inqueue_flow_ids["Inqueue_Flow"]
+
 
   acw_wrapup_prompt = "MANDATORY_TIMEOUT"
   acw_timeout_ms    = 120000
